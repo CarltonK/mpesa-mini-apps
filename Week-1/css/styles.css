@@ -1,0 +1,24 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    font-family: courier;
+    font-size: large;
+}
+
+p {
+    color: white;
+}
+
+#special {
+    color: red;
+}
+
+.test {
+    color: aqua;
+    font-family: monospace;
+    font-size: xx-large;
+    direction: rtl;
+}
