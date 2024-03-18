@@ -2,6 +2,7 @@ const numberArrays = [1,2,3,4,5];
 
 // Methods
 // 1. Length
+// This is a comment
 const length = numberArrays.length;
 console.log('The array has',length,'items');
 
