@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+
+<body>
+    <!-- Local Storage on the Web -->
+    <h1>Local Storage on the Web</h1>
+
+    <!-- Create an input field to gather data from the user -->
+    <label for="emailInput">Enter your email</label>
+    <input type="email" id="emailInput">
+
+    <!-- When a button is clicked trigger a script that saved the gathered data -->
+    <button onclick="saveData()">Save</button>
+    <button onclick="deleteData()">Restart</button>
+
+    <!-- Show saved data -->
+    <p id="savedData"></p>
+
+    <script>
+        function saveData() {
+            // Retrieve data from input field
+            const emailData = document.getElementById('emailInput').value;
+
+            // Validate data
+            if (!String(emailData).includes('@')) {
+                alert('Email is not valid');
+            } else {
+                // Save the data using LocalStorage
+                localStorage.setItem('email', emailData);
+                alert('Email captured successfully');
+
+                displayData();
+            }
+        }
+
+        function displayData() {
+            // Get the element where the saved data is going to be displayed
+            const displayParagraph = document.getElementById('savedData');
+
+            // Retrieve the saved data
+            const dataFromStorage = localStorage.getItem('email');
+            
+            // Append the retrieved data to the element
+            // Verify that actual data has been retrieved
+            if (dataFromStorage) {
+                displayParagraph.textContent = "Current Data = " + dataFromStorage;
+            } else {
+                displayParagraph.textContent = "We didn't find any data in the local storage";
+            }
+            // If so, show data in paragraph, else show an error message
+        }
+
+        function deleteData() {
+            localStorage.clear();
+            // Clear only one item
+            // localStorage.removeItem('email');
+        }
+
+        // Trigger the display data function when the page loads
+        window.onload = displayData;
+    </script>
+</body>
+
+</html>
