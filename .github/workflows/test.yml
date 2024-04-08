@@ -12,6 +12,8 @@ jobs:
         node-version: [20.x]
     steps:
     - uses: actions/checkout@v3 # Download the repo
+      with:
+        path: Week-4
     # - name: Navigate to Week-4 folder
     #   run: cd Week-4
     # - name: Confirm folder
