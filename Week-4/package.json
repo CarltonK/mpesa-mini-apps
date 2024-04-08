@@ -1,0 +1,27 @@
+{
+  "name": "week-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:reports": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarltonK/mpesa-mini-apps.git"
+  },
+  "keywords": [
+    "test",
+    "jest"
+  ],
+  "author": "Mark Carlton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarltonK/mpesa-mini-apps/issues"
+  },
+  "homepage": "https://github.com/CarltonK/mpesa-mini-apps#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
