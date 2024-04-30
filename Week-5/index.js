@@ -9,11 +9,23 @@ app.use(express.json());
 
 // GET Request
 app.get('/', function (req, res) {
+  const clientIp = req.ip;
+  console.log('This request came from', clientIp);
   // Server Response
   res.send('Hello World');
 });
 
 // POST Request
+app.post('/', function (req, res) {
+  const clientIp = req.ip;
+  const body = req.body;
+
+  console.log('This request came from', clientIp);
+  console.log('Body', body);
+  // Server Response
+  res.json({ message: 'Thanks' });
+});
+
 app.post('/users', (req, res) => {
   const body = req.body;
   delete body.password;
@@ -35,6 +47,6 @@ app.post('/login', (req, res) => {
 });
 
 // Starting the server
-app.listen(3000, function() {
+app.listen(3000, function () {
   console.log('The server is up and running');
 });
