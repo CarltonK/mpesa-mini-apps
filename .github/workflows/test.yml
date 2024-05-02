@@ -1,0 +1,26 @@
+name: Testing
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./Week-4 # Specify working directory
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    - name: Install Node.js using NVM
+      run: |
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        nvm install 20 # or specify a specific version, e.g., nvm install 14
+        nvm use 20
+    - name: Install dependencies and run tests
+      run: |
+        npm ci
+        npm test
