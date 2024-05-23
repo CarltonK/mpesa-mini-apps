@@ -13,7 +13,7 @@ function outer() {
 }
 
 const closure = outer();
-closure();
+// closure();
 
 
 
@@ -30,6 +30,62 @@ function createSomeone(name) {
 }
 
 const person = createSomeone('John');
-console.log(person.getName());
+// console.log(person.getName());
 person.growPersonOlder();
-console.log(person.getAge());
+// console.log(person.getAge());
+
+
+
+/* 
+ * Closures and State
+ */
+// Example 1
+
+function createCounter() {
+    let count = 0; // Private Variable
+
+    return {
+        increment: function() {
+            count = count + 1;
+            return count;
+        },
+        decrement: function() {
+            count = count - 1;
+            return count;
+        },
+        getCount: function() {
+            return count;
+        }
+    };
+}
+
+const counter = createCounter();
+
+console.log(counter.increment());
+console.log(counter.getCount());
+console.log(counter.decrement());
+
+// Example 2 - Closure with Private Methods
+
+function createPerson(name) {
+    let _name = name; // Private Variable
+
+    // Setter - Private Method
+    function setNewName(newName) {
+        _name = newName;
+    }
+
+    return {
+        getName: function() {
+            return _name;
+        },
+        changeName: function(newName) {
+            setNewName(newName)
+        }
+    }
+}
+
+const person2 = createPerson('John');
+console.log(person2.getName());
+person2.changeName('James');
+console.log(person2.getName());
