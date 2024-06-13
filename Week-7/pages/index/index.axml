@@ -1,0 +1,6 @@
+
+<view>
+    <text id="intro"> Welcome to my restaurants</text>
+    <button size="default" id="order-btn" type="primary" onTap="orderNow">Order Now</button>
+  </view>
+  
