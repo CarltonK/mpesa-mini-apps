@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./Week-4 # Specify working directory
+        working-directory: ./Bronze/Week-4 # Specify working directory
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
