@@ -2,6 +2,11 @@
 import { useState } from 'react';
 import './App.css';
 import Welcome from './Welcome';
+import InlineStyledButton from './components/styles/InlineStyledButton';
+import CssFileButton from './components/styles/CssFIleButton';
+import StyledComponentButton from './components/styles/StyledComponentButton';
+import LoginForm from './components/authentication/LoginForm';
+import FormikForm from './components/authentication/FormikForm';
 
 function App() {
   const [childData, setChildData] = useState('Default value');
@@ -26,13 +31,32 @@ function App() {
           Learn React v18.13.1
         </a>
       </header> */}
-      <h1>Data from Child: {childData}</h1>
+
+      {/* 
+      STATE
+       */}
+      {/* <h1>Data from Child: {childData}</h1>
       <Welcome 
         sendDataToParent={handleDataFromChild}
         greeting={'Hello from Parent'}
       >
         
-      </Welcome>
+      </Welcome> */}
+
+      {/* 
+      STYLES
+       */}
+
+      {/* <InlineStyledButton></InlineStyledButton> */}
+      {/* <CssFileButton></CssFileButton> */}
+      {/* <StyledComponentButton></StyledComponentButton> */}
+
+      {/* 
+      FORMS
+       */}
+
+      {/* <LoginForm></LoginForm> */}
+      <FormikForm></FormikForm>
     </div>
   );
 }
