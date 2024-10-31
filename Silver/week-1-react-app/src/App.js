@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import { useState } from 'react';
 import './App.css';
+import Home from './components/home/Home';
 
 function App() {
   const [childData, setChildData] = useState('Default value');
@@ -13,7 +14,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        {/* <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
@@ -23,8 +24,9 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React v18.13.1
-        </a>
+        </a> */}
       </header>
+      <Home></Home>
     </div>
   );
 }
