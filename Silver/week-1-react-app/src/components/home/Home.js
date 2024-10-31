@@ -26,7 +26,10 @@ function Home() {
             {items.map((item, index) => {
                 console.log('ITEM--------',item)
                 // console.log('ITEM INDEX--------',index)
-                return (<li key={index}>{item.name}</li>)
+                return (<div key={index} className="result-card">
+                    <h2>{item.name}</h2>
+                    <p>{item.description}</p>
+                </div>)
             })}
         </ul>
     );
