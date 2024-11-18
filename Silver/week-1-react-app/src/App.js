@@ -2,6 +2,22 @@ import logo from './logo.svg';
 import { useState } from 'react';
 import './App.css';
 import Home from './components/home/Home';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import Counter from './components/home/Counter';
+
+const counterReducer = (state = 0, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    case 'DECREMENT':
+      return state - 1;
+    default:
+      return state;
+  }
+}
+
+const store = createStore(counterReducer);
 
 function App() {
   const [childData, setChildData] = useState('Default value');
@@ -26,7 +42,10 @@ function App() {
           Learn React v18.13.1
         </a> */}
       </header>
-      <Home></Home>
+      {/* <Home></Home> */}
+      <Provider store={store}>
+        <Counter />
+      </Provider>
     </div>
   );
 }
