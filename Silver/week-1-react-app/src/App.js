@@ -5,6 +5,7 @@ import Home from './components/home/Home';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import Counter from './components/home/Counter';
+import TodoApp from './components/home/Todo';
 
 const counterReducer = (state = 0, action) => {
   switch (action.type) {
@@ -17,7 +18,21 @@ const counterReducer = (state = 0, action) => {
   }
 }
 
+const todosReducer = (state = [], action) => {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return [...state, { id: Date.now(), text: action.input, completed: false }];
+    case 'DONE_TODO':
+      return state.map((todo) => todo.id === action.id ? { ...todo, completed: !todo.completed } : todo);
+    case 'REMOVE_TODO':
+      return state.filter((todo) => todo.id !== action.id);
+    default:
+      return state;
+  }
+}
+
 const store = createStore(counterReducer);
+const todosStore = createStore(todosReducer);
 
 function App() {
   const [childData, setChildData] = useState('Default value');
@@ -28,23 +43,12 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        {/* <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React v18.13.1
-        </a> */}
-      </header>
       {/* <Home></Home> */}
-      <Provider store={store}>
+      {/* <Provider store={store}>
         <Counter />
+      </Provider> */}
+      <Provider store={todosStore}>
+        <TodoApp />
       </Provider>
     </div>
   );
