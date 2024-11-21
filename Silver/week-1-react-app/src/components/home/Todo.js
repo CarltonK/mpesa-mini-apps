@@ -31,7 +31,7 @@ function TodoApp() {
     }
 
     // Get Data from the store
-    const todos = useSelector((state) => state);
+    const todos = useSelector((state) => state.todos);
 
     return (
         <div>

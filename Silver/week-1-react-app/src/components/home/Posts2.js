@@ -5,14 +5,12 @@
  */
 
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchPosts } from './../../actions/posts.actions';
+import { usePostsStore } from '../../store/posts.store';
 
-function Posts() {
-    const { posts, loading, error } = useSelector((state) => state.posts);
-    const dispatch = useDispatch();
+function Posts2() {
+    const { posts, loading, error, fetchPosts } = usePostsStore((state) => state);
 
-    useEffect(() => { dispatch(fetchPosts()) },[dispatch])
+    useEffect(() => { (fetchPosts()) },[fetchPosts])
 
     if (loading) return (<p>Loading...</p>);
     if (error) return (<p>Error detected: {error}</p>);
@@ -32,4 +30,4 @@ function Posts() {
     );
 }
 
-export default Posts;
+export default Posts2;

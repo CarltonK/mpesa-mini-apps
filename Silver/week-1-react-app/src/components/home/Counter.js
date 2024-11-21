@@ -5,7 +5,7 @@ const increment = () => ({ type: 'INCREMENT' })
 const decrement = () => ({ type: 'DECREMENT' })
 
 function Counter() {
-    const count = useSelector((state) => state);
+    const count = useSelector((state) => state.counter);
     const dispatch = useDispatch();
 
     return (
