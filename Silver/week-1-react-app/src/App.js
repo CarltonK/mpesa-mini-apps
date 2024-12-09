@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import { useState } from 'react';
+import { createContext, useState, useContext } from 'react';
 import './App.css';
 import Home from './components/home/Home';
 import { Provider } from 'react-redux';
@@ -22,30 +22,60 @@ const appReducer = combineReducers({
 });
 const store = createStore(appReducer, applyMiddleware(thunk));
 
-function App() {
-  const [childData, setChildData] = useState('Default value');
+const ThemeContext = createContext('light');
 
-  const handleDataFromChild = (data) => {
-    setChildData(data);
-  }
+function Theme() {
+  const theme = useContext(ThemeContext);
 
   return (
-    <div className="App">
-      {/* <Home></Home> */}
-      {/* <Provider store={store}>
-        <Counter />
-      </Provider>
-      <Provider store={store}>
-        <TodoApp />
-      </Provider> */}
-      <Provider store={store}>
-        <Posts />
-      </Provider>
-      <Provider store={store}>
-        <Posts2 />
-      </Provider>
-    </div>
+      <div>
+          <p>The current theme is {theme}</p>
+          <button >
+              Change Theme
+          </button>
+      </div>
   );
 }
+
+function Toolbar() {
+  return <Theme/>
+}
+
+function App() {
+  // const [childData, setChildData] = useState('Default value');
+  const [theme, setTheme] = useState('light');
+
+  // const handleDataFromChild = (data) => {
+  //   setChildData(data);
+  // }
+
+  return (
+    <ThemeContext.Provider value={theme}>
+      <Toolbar/>
+    </ThemeContext.Provider>
+  );
+
+  // return (
+  //   <div className="App">
+  //     {/* <Home></Home> */}
+  //     {/* <Provider store={store}>
+  //       <Counter />
+  //     </Provider>
+  //     <Provider store={store}>
+  //       <TodoApp />
+  //     </Provider> */}
+  //     <Counter />
+  //     <Posts />
+  //     {/* <Provider store={store}>
+  //       <Posts />
+  //     </Provider>
+  //     <Provider store={store}>
+  //       <Posts2 />
+  //     </Provider> */}
+  //   </div>
+  // );
+}
+
+
 
 export default App;
