@@ -4,6 +4,7 @@ import SignUp from './components/signup';
 import SignIn from './components/signin';
 import ResetPassword from './components/reset_password';
 import Firestore from './components/firestore';
+import FetchExample from './components/fetch_data';
 
 function App() {
   return (
@@ -22,10 +23,11 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <SignUp />
+      {/* <SignUp />
       <SignIn />
       <ResetPassword />
-      <Firestore />
+      <Firestore /> */}
+      <FetchExample />
 
       <h1>Testing a new release</h1>
     </div>
