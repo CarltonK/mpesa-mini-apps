@@ -29,7 +29,7 @@ function App() {
       <Firestore /> */}
       <FetchExample />
 
-      <h1>Testing a new release</h1>
+      {/* <h1>Testing a new release</h1> */}
     </div>
   );
 }
