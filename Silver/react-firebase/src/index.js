@@ -4,10 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import ThemeProvider from './components/context'
+import IntlProvider from './components/intl'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider>
+      <IntlProvider>
+        <App />
+      </IntlProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 

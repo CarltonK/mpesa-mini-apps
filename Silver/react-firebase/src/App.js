@@ -5,6 +5,8 @@ import SignIn from './components/signin';
 import ResetPassword from './components/reset_password';
 import Firestore from './components/firestore';
 import FetchExample from './components/fetch_data';
+import ThemeContextExample from './components/theme'
+import LanguageContextExample from './components/language'
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
       <ResetPassword />
       <Firestore /> */}
       <FetchExample />
+      {/* <LanguageContextExample /> */}
+      {/* <ThemeContextExample /> */}
 
       {/* <h1>Testing a new release</h1> */}
     </div>

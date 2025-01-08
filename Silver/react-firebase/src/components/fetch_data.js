@@ -1,4 +1,7 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useState, useContext } from 'react';
+import ThemeContextExample from './theme'
+import LanguageContextExample from './language'
+import { LanguageContext } from './intl';
 
 // 3 States
 // State 1 = Started to fetch the data but not yet received the data
@@ -34,53 +37,6 @@ const reducer = (state, action) => {
             return state;
     }
 }
-
-// function FetchExample() {
-
-//     const [state, dispatch] = useReducer(reducer, initialState)
-
-//     const fetchData = async (target) => {
-//         // Fetching data started
-//         dispatch({ type: 'INITIAL_STATE', target })
-
-//         try {
-//             const result = await fetch(`https://jsonplaceholder.typicode.com/${target}/1`);
-//             if (result.status !== 200) {
-//                 // Error here
-//                 throw new Error('Hey! There was a problem fetching data');
-//             } else {
-//                 // Success here
-//                 const resultData = await result.json();
-//                 console.log(resultData)
-//                 dispatch({ type: 'SUCCESS_STATE', target, payload: resultData })
-//             }
-//         } catch (error) {
-//             dispatch({ type: 'FAILED_STATE', target, error: error.message })
-//         }
-//     }
-
-//     if (state.loading) return <p>Loading....</p>
-//     if (state.error) return <p>{state.error}</p>
-
-//     return (
-//         <div>
-//             <div>
-//                 <h1>Posts</h1>
-//                 {state.posts.loading && <p>Posts are loading</p>}
-//                 {state.posts.error && <p>Error (fetching posts): {state.posts.error}</p>}
-//                 {state.posts.data && <p>{state.posts.data.title}</p>}
-//                 <button onClick={() => fetchData('posts')}>Load Posts</button>
-//             </div>
-//             <div>
-//                 <h1>Comments</h1>
-//                 {state.comments.loading && <p>comments are loading</p>}
-//                 {state.comments.error && <p>Error (fetching comments): {state.comments.error}</p>}
-//                 {state.comments.data && <p>{state.comments.data.body}</p>}
-//                 <button onClick={() => fetchData('comments')}>Load comments</button>
-//             </div>
-//         </div>
-//     );
-// }
 
 function DynamicFetchExample() {
 
@@ -153,6 +109,8 @@ function DynamicFetchExample() {
                     </ol>
                 )}
             </div>
+            <ThemeContextExample />
+            <LanguageContextExample />
         </div>
     );
 }
