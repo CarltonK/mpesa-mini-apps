@@ -7,6 +7,7 @@ import Firestore from './components/firestore';
 import FetchExample from './components/fetch_data';
 import ThemeContextExample from './components/theme'
 import LanguageContextExample from './components/language'
+import Posts from './components/zustand'
 
 function App() {
   return (
@@ -29,7 +30,8 @@ function App() {
       <SignIn />
       <ResetPassword />
       <Firestore /> */}
-      <FetchExample />
+      {/* <FetchExample /> */}
+      <Posts />
       {/* <LanguageContextExample /> */}
       {/* <ThemeContextExample /> */}
 
