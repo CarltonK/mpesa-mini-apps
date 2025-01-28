@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- Prolog -->
+<!-- Comments - CTRL + / or CTRL + SHIFT + A -->
+<!-- Case Sensitive -->
+
+<!-- Library -->
+<!-- Attribute values must be within quotes. -->
+<!-- An element cannot contain several attributes with the same name. -->
+<library> <!-- Root Element -->
+    <books>
+        <book id="1"> <!-- Don't store large data in attributes -->
+            <title>Hacksaw</title>
+            <author>Silver Team</author>
+            <year>2024</year>
+        </book>
+        <book id="2"> <!-- Don't store large data in attributes -->
+            <title>XXXX</title>
+            <author>Silver Team</author>
+            <year>2025</year>
+        </book>
+    </books>
+    <staff>
+        <person id="1">
+            <name>Mark Carlton</name>
+            <department>IT</department>
+        </person>
+        <person id="2">
+            <name>John Doe</name>
+            <department>Accounting</department>
+        </person>
+    </staff>
+</library>
