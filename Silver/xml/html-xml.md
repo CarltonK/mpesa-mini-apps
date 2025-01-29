@@ -9,5 +9,5 @@ Differences
 5. Storage of Data = HTML cannot be used to store data but XML is flexible
 
 Resources
-1. https://www.deltaxml.com/blog/the-world-of-xml-and-json/whats-the-relationship-between-xml-json-html-and-the-internet/
-2. https://aws.amazon.com/compare/the-difference-between-html-and-xml/
+1. [HTML vs XML](https://www.deltaxml.com/blog/the-world-of-xml-and-json/whats-the-relationship-between-xml-json-html-and-the-internet/)
+2. [HTML vs XML](https://aws.amazon.com/compare/the-difference-between-html-and-xml/)
