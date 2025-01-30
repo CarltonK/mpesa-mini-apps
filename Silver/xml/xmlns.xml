@@ -1,0 +1,38 @@
+<!-- Namespaces are used to avoid conflicts for elements that have the same name -->
+<!-- <element xmlns:name="TESTNS"> -->
+
+<!-- Multiple Namespaces -->
+<library xmlns:books="https://example.com/books" xmlns:staff="https://example.com/staff"> <!-- Root Element -->
+    <books:book>
+        <book id="1"> <!-- Don't store large data in attributes -->
+            <title>Hacksaw</title>
+            <author>Silver Team</author>
+            <year>2024</year>
+        </book>
+        <book id="2"> <!-- Don't store large data in attributes -->
+            <title>XXXX</title>
+            <author>Silver Team</author>
+            <year>2025</year>
+        </book>
+    </books:book>
+    <staff:IT>
+        <person id="1">
+            <name>Mark Carlton</name>
+            <department>IT</department>
+        </person>
+        <person id="2">
+            <name>John Doe</name>
+            <department>Accounting</department>
+        </person>
+    </staff:IT>
+    <staff:Acc>
+        <person id="1">
+            <name>Mark Carlton</name>
+            <department>IT</department>
+        </person>
+        <person id="2">
+            <name>John Doe</name>
+            <department>Accounting</department>
+        </person>
+    </staff:Acc>
+</library>

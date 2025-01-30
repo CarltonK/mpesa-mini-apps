@@ -1,0 +1,11 @@
+<data 
+    xmlns:app1="https://example.com/app1" 
+    xmlns:app2="https://example.com/app2">
+
+    <app1:user>John Doe</app1:user>
+    <app1:books>Jane Doe</app1:books>
+
+    <app2:user>Jane Doe</app2:user>
+    <app2:books>Jane Doe</app2:books>
+
+</data>
