@@ -1,0 +1,11 @@
+{
+    "subPackageBuildType": "shared",
+    "pages": [
+      "pages/index/index",
+      "pages/orders/orders"
+    ],
+    "window": {
+      "defaultTitle": "Restaurants"
+    }
+  }
+  

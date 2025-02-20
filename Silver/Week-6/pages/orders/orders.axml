@@ -1,0 +1,6 @@
+<view>
+  <text id="orders-intro"> What would you like to order? </text>
+  <input id="orders-input" placeholder="Two sodas" value="{{inputValue}}" onBlur="getData" />
+  <button size="default" type="primary" onTap="goBack">Back to Home</button>
+</view>
+  
