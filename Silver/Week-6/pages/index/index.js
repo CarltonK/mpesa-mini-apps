@@ -39,4 +39,10 @@ Page({
         url: '../orders/orders'
       })
     },
+
+    navigateToNews(event) {
+      my.navigateTo({
+        url: '../news/news'
+      })
+    },
   });

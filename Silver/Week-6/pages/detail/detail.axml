@@ -1,0 +1,6 @@
+<view>
+    <image class="news-image" src="{{singleNewsItem.urlToImage}}"></image>
+    <text class="news-title">{{singleNewsItem.title}}</text>
+    <text>{{singleNewsItem.description}}</text>
+    <text>{{singleNewsItem.author}}</text>
+</view>

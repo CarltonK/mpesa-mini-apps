@@ -1,0 +1,6 @@
+<view> <!-- List -->
+    <view a:for="{{news}}" a:key="{{index}}" onTap="navigateToNewsDetail"> <!-- Single List Item -->
+        <image class="news-image" src="{{item.urlToImage}}"></image>
+        <text class="news-title">{{item.title}}</text>
+    </view>
+</view>
